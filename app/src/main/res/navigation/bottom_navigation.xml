@@ -5,16 +5,27 @@
     android:id="@+id/bottom_navigation"
     app:startDestination="@id/profileFragment">
 
+    <!-- Profile Fragment -->
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.myshop2.ProfileFragment"
         android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile">
+
+        <!-- Tambahkan action ke Edit Profile -->
+        <action
+            android:id="@+id/action_profileFragment_to_editProfileFragment"
+            app:destination="@id/editProfileFragment" />
+    </fragment>
+
+    <!-- Cart Fragment -->
     <fragment
         android:id="@+id/cartFragment"
         android:name="com.example.myshop2.CartFragment"
         android:label="fragment_cart"
         tools:layout="@layout/fragment_cart" />
+
+    <!-- Home Fragment -->
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.myshop2.HomeFragment"
@@ -24,9 +35,11 @@
             android:id="@+id/action_homeFragment_to_checkoutFragment"
             app:destination="@id/checkoutFragment" />
     </fragment>
+
+    <!-- Checkout Fragment -->
     <fragment
         android:id="@+id/checkoutFragment"
-        android:name="com.example.myshop2.checkoutFragment"
+        android:name="com.example.myshop2.CheckoutFragment"
         android:label="fragment_checkout"
         tools:layout="@layout/fragment_checkout" >
         <argument
@@ -37,9 +50,36 @@
             android:id="@+id/action_checkoutFragment_to_addressFragment2"
             app:destination="@id/addressFragment" />
     </fragment>
+
+    <!-- Address Fragment -->
     <fragment
         android:id="@+id/addressFragment"
         android:name="com.example.myshop2.AddressFragment"
         android:label="fragment_address"
         tools:layout="@layout/fragment_address" />
+
+    <!-- Edit Profile Fragment -->
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.example.myshop2.EditProfileFragment"
+        android:label="fragment_edit_profile"
+        tools:layout="@layout/fragment_edit_profile">
+
+        <!-- Argumen yang akan diterima -->
+        <argument
+            android:name="name"
+            app:argType="string"
+            android:defaultValue="Ariel Tatum" />
+
+        <argument
+            android:name="nim"
+            app:argType="string"
+            android:defaultValue="123456789" />
+
+        <argument
+            android:name="province"
+            app:argType="string"
+            android:defaultValue="Ngawi" />
+    </fragment>
+
 </navigation>

@@ -1,4 +1,4 @@
-package com.example.MyShop2
+package com.example.myshop2
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,12 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import com.example.myshop2.checkoutFragmentArgs
-import com.example.myshop2.checkoutFragmentDirections
 import com.example.myshop2.databinding.FragmentCheckoutBinding
 
 
-class checkoutFragment : Fragment() {
+class CheckoutFragment : Fragment() {
     // buat var binding
     private var _binding: FragmentCheckoutBinding? = null
     private val binding get() = _binding!!
@@ -36,7 +34,7 @@ class checkoutFragment : Fragment() {
         with(binding) {
 
             // baca argumen yang dikirim dari home
-            val args: checkoutFragmentArgs by navArgs()
+            val args: CheckoutFragmentArgs by navArgs()
             var productName = args.productName
 
             // set text menjadi product
@@ -45,7 +43,7 @@ class checkoutFragment : Fragment() {
             // kalau edit text address di klik
             edtAddress.setOnClickListener {
                 // buat action untuk navigasi ke address
-                var action = checkoutFragmentDirections.actionCheckoutFragmentToAddressFragment2()
+                var action = CheckoutFragmentDirections.actionCheckoutFragmentToAddressFragment2()
                 // cari navigation controller dari host
                 findNavController().navigate(action)
             }

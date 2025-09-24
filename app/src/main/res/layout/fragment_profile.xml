@@ -1,14 +1,43 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileFragment">
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center_horizontal">
 
-    <!-- TODO: Update blank fragment layout -->
+    <ImageView
+        android:id="@+id/imgProfile"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_profile"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/circle_background"
+        android:scaleType="centerCrop"/>
+
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/txtName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nama"
+        android:textSize="18sp"
+        android:layout_marginTop="8dp"/>
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/txtProvince"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Provinsi"/>
+
+    <TextView
+        android:id="@+id/txtNim"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NIM"/>
+
+    <Button
+        android:id="@+id/btnEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ubah"
+        android:layout_marginTop="16dp"/>
+</LinearLayout>
